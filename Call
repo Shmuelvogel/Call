@@ -1,0 +1,7 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Call</title></head>
+<body style="margin:0;font-family:sans-serif;background:#f3f4f2;text-align:center;padding:60px 20px">
+<div id="n" style="font-size:34px;font-weight:800;margin-bottom:24px"></div>
+<a id="b" style="display:block;background:#1f6b4a;color:#fff;text-decoration:none;font-size:26px;font-weight:800;border-radius:16px;padding:24px">📞 Call · Llamar</a>
+<p style="color:#666">Tap the green button to call.<br>Toca el botón verde para llamar.</p>
+<script>var d=location.hash.replace(/\D/g,'');if(d.length==10)d='1'+d;var x=d.slice(-10);document.getElementById('n').textContent='('+x.slice(0,3)+') '+x.slice(3,6)+'-'+x.slice(6);document.getElementById('b').href='tel:+'+d;</script>
+</body></html>
