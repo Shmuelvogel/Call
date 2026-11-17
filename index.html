@@ -1,7 +1,17 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Call</title></head>
-<body style="margin:0;font-family:sans-serif;background:#f3f4f2;text-align:center;padding:60px 20px">
-<div id="n" style="font-size:34px;font-weight:800;margin-bottom:24px"></div>
-<a id="b" style="display:block;background:#1f6b4a;color:#fff;text-decoration:none;font-size:26px;font-weight:800;border-radius:16px;padding:24px">📞 Call · Llamar</a>
-<p style="color:#666">Tap the green button to call.<br>Toca el botón verde para llamar.</p>
-<script>var d=location.hash.replace(/\D/g,'');if(d.length==10)d='1'+d;var x=d.slice(-10);document.getElementById('n').textContent='('+x.slice(0,3)+') '+x.slice(3,6)+'-'+x.slice(6);document.getElementById('b').href='tel:+'+d;</script>
-</body></html>
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>B'Above Field</title></head>
+<body style="margin:0;font-family:sans-serif;background:#f3f4f2;text-align:center;padding:30px 18px;color:#1d2420">
+<div id="call" hidden><div id="n" style="font-size:34px;font-weight:800;margin:30px 0 24px"></div><a id="b" style="display:block;background:#1f6b4a;color:#fff;text-decoration:none;font-size:26px;font-weight:800;border-radius:16px;padding:24px">📞 Call · Llamar</a><p style="color:#666">Tap the green button to call.<br>Toca el botón verde para llamar.</p></div>
+<div id="cam" hidden><h2>📷 Photos · Fotos</h2>
+<label style="display:block;background:#1d2420;color:#fff;font-size:22px;font-weight:800;border-radius:16px;padding:20px;margin-bottom:10px">📷 Take photo · Tomar foto<input type="file" accept="image/*" capture="environment" style="display:none" onchange="add(this)"></label>
+<label style="display:block;background:#fff;border:2px solid #ccc;font-size:20px;font-weight:700;border-radius:16px;padding:16px">🖼️ From gallery · Galería<input type="file" accept="image/*" multiple style="display:none" onchange="add(this)"></label>
+<div id="th" style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:16px 0"></div>
+<button id="cp" onclick="cp()" style="display:none;width:100%;background:#1f6b4a;color:#fff;border:0;font-size:22px;font-weight:800;border-radius:16px;padding:20px">✓ Copy photos · Copiar fotos</button>
+<p id="m" style="font-size:17px;color:#444"></p></div>
+<script>
+var h=location.hash.slice(1),P=[];
+if(h=='photo'){document.getElementById('cam').hidden=false}else{document.getElementById('call').hidden=false;var d=h.replace(/\D/g,'');if(d.length==10)d='1'+d;var x=d.slice(-10);document.getElementById('n').textContent='('+x.slice(0,3)+') '+x.slice(3,6)+'-'+x.slice(6);document.getElementById('b').href='tel:+'+d}
+function add(i){[].slice.call(i.files,0,4).forEach(function(f){var r=new FileReader();r.onload=function(){var im=new Image();im.onload=function(){var s=Math.min(1,800/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=im.width*s;c.height=im.height*s;c.getContext('2d').drawImage(im,0,0,c.width,c.height);var u=c.toDataURL('image/jpeg',.6);P.push(u.split(',')[1]);P=P.slice(-4);var t=document.createElement('img');t.src=u;t.style.cssText='width:90px;height:90px;object-fit:cover;border-radius:8px';document.getElementById('th').appendChild(t);document.getElementById('cp').style.display='block'};im.src=r.result};r.readAsDataURL(f)});i.value=''}
+function cp(){var t='HSPHOTO:'+P.join(','),m=document.getElementById('m');function ok(){m.innerHTML='<b>✓ Copied!</b> Close this page (X at top) and tap <b>📋 Paste photo</b>.<br><b>✓ ¡Copiado!</b> Cierra esta página y toca <b>📋 Pegar foto</b>.'}
+if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(t).then(ok,function(){fb(t);ok()});else{fb(t);ok()}}
+function fb(t){var a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();document.execCommand('copy');a.remove()}
+</script></body></html>
