@@ -1,0 +1,127 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex"><meta name="theme-color" content="#1f6b4a"><title>B'Above Field</title>
+<link rel="manifest" href="manifest.json"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes">
+<style>[hidden]{display:none!important}*{box-sizing:border-box}body{margin:0;font-family:system-ui,Roboto,sans-serif;background:#f3f4f2;color:#1d2420;-webkit-tap-highlight-color:transparent}
+.top{position:sticky;top:0;z-index:5;background:#1f6b4a;color:#fff;padding:12px 14px calc(12px);display:flex;align-items:center;gap:10px}.top b{font-size:18px;flex:1}.top small{display:block;font-weight:500;font-size:13px;opacity:.85}
+.tb{background:rgba(255,255,255,.18);color:#fff;border:0;border-radius:10px;padding:9px 12px;font:700 14px system-ui}
+.test{background:#f8ecd6;color:#8a5a12;text-align:center;font:700 13px system-ui;padding:6px}
+.wrap{padding:12px 12px 120px;max-width:640px;margin:0 auto}
+.card{background:#fff;border-radius:14px;padding:14px;margin-bottom:12px;border-left:6px solid #1f6b4a;box-shadow:0 1px 3px rgba(0,0,0,.06)}.card.hi{border-left-color:#c0392b}.card.md{border-left-color:#c9a24a}.card.dn{border-left-color:#8fbfa6;background:#eef7f1}
+.sr{font:13px monospace;color:#5d6760}.t{font-weight:800;font-size:18px;margin:3px 0}.s{font-size:15px;color:#3c4640}.badge{display:inline-block;font:800 11px system-ui;padding:3px 8px;border-radius:20px;background:#eef1ee;color:#3c4640;margin-right:6px}.badge.hi{background:#fbe3e0;color:#a02d20}.badge.dn{background:#dcefe5;color:#1f6b4a}
+.sec{font:800 13px system-ui;color:#5d6760;text-transform:uppercase;letter-spacing:.04em;margin:18px 4px 8px}
+.big{display:block;border-radius:14px;padding:20px 16px;text-align:center;font:800 20px system-ui;border:0;width:100%;cursor:pointer;text-decoration:none}.big small{display:block;font-size:14px;font-weight:600;opacity:.85;margin-top:3px}
+.grn{background:#1f6b4a;color:#fff}.dark{background:#1d2420;color:#fff}.wht{background:#fff;color:#1d2420;border:2px solid #1d2420}.ms{background:#2f2f2f;color:#fff}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.row2 .big{padding:16px 8px;font-size:17px}
+a.addr{color:#1f6b4a;font-weight:700;text-decoration:underline}
+.desc{white-space:pre-wrap;font-size:15px;line-height:1.4;margin-top:10px}
+.phs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:10px}.phs img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px;background:#e5e8e4}.nop{color:#5d6760;font-size:14px;margin-top:8px}
+.cm{background:#f3f4f2;border-radius:10px;padding:10px;margin-top:8px;font-size:14px}.cm b{font-size:12px;color:#5d6760;display:block}
+.boxes{display:flex;gap:12px;justify-content:center;margin:14px 0}.ph{display:grid;gap:4px;justify-items:center;font-size:14px;font-weight:700}.ph i{font-weight:500;color:#5d6760;font-style:normal;font-size:12px}
+.box{width:148px;height:148px;border-radius:12px;position:relative;border:3px dashed #c9cfc8;background:#fff;display:flex;align-items:center;justify-content:center;font-size:40px}.box.now{border-color:#c9a24a;background:#fdf8ec}.box.have{border:3px solid #1f6b4a}.box img{width:100%;height:100%;object-fit:cover;border-radius:9px}
+.x{position:absolute;top:-10px;right:-10px;width:32px;height:32px;border-radius:50%;border:0;background:#1d2420;color:#fff;font:800 18px/1 system-ui}
+.h2{font-weight:800;font-size:20px;text-align:center}.h2 i{display:block;font-weight:500;font-size:14px;color:#5d6760;font-style:normal}
+label.big input,.lnk input{display:none}.lnk{display:block;text-align:center;font-size:15px;color:#1f6b4a;font-weight:700;text-decoration:underline;padding:10px}
+textarea{font:16px system-ui;border:1px solid #c9cfc8;border-radius:10px;padding:12px;width:100%;min-height:70px}
+.foot{position:fixed;left:0;right:0;bottom:0;background:#f3f4f2;padding:12px 14px calc(14px + env(safe-area-inset-bottom));box-shadow:0 -4px 12px rgba(0,0,0,.08);z-index:4}.foot>*{max-width:612px;margin:0 auto}
+.msg{text-align:center;font-weight:800;font-size:17px;padding:14px;border-radius:12px}.msg.g{background:#dcefe5;color:#1f6b4a}.msg.y{background:#f8ecd6;color:#8a5a12}.msg.r{background:#fbe3e0;color:#a02d20;font-weight:600;font-size:15px}
+.ex{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}.ex div{position:relative}.ex img,.ex video{width:76px;height:76px;object-fit:cover;border-radius:8px}
+.sheet{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:9;display:flex;align-items:flex-end}.sheet>div{background:#fff;width:100%;border-radius:18px 18px 0 0;padding:18px 14px calc(18px + env(safe-area-inset-bottom));max-height:85vh;overflow:auto}
+.ct{display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid #eee}.ct div{flex:1}.ct b{display:block;font-size:17px}.ct span{color:#5d6760;font-size:14px}.ct a{background:#1f6b4a;color:#fff;text-decoration:none;font:800 16px system-ui;padding:12px 16px;border-radius:12px}
+#zz{position:fixed;inset:0;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center;z-index:10;padding:12px}#zz img,#zz video{max-width:100%;max-height:100%}
+.login{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:30px 22px;max-width:480px;margin:0 auto;text-align:center}.logo{width:96px;height:96px;border-radius:22px;margin:0 auto 16px}
+select{font:700 15px system-ui;padding:8px;border-radius:10px;border:0}
+.spin{text-align:center;padding:40px;color:#5d6760;font-weight:700}
+</style></head><body>
+<div id="app"></div><div id="zz" hidden onclick="this.hidden=true;this.innerHTML=''"></div>
+<script>
+// ---------- settings ----------
+const CLIENT='678c86bb-53fd-4e3c-9890-1c965e63cd53',TENANT='385871dd-c197-4cf7-a9cf-d43490dd7137',SP='https://babove.sharepoint.com',LIST='HR365HDMTickets';
+const SCOPE=SP+'/AllSites.Write offline_access openid profile',REDIR=location.origin+location.pathname.replace(/index\.html$/,'');
+const AUTH='https://login.microsoftonline.com/'+TENANT+'/oauth2/v2.0/';
+const TEST=true; // nothing is written to HelpDesk while true
+const CONTACTS=[{n:'Shmily Vogel',r:{es:'Gerente de instalaciones',en:'Facilities manager'},p:'8456420814'},{n:'Maria',r:{es:'Oficina – Salud y Seguridad',en:'Office – Health & Safety'},p:'7188403042'}];
+const CREW={'german':'German','melvin':'Melbin'};
+// ---------- text ----------
+const TX={es:{sw:'EN',signin:'Iniciar sesión con Microsoft',signsub:'Usa tu cuenta de B\'Above',my:'Mis trabajos',hi:'Hola',none:'No tienes trabajos abiertos 🎉',open:'Abiertos',donel:'Marcados terminados',done:'✓ Terminado',dones:'Tomar fotos y terminar',call:'📞 Llamar',back:'← Volver',photos:'Fotos',nophoto:'Sin foto',loadph:'Cargando fotos…',desc:'Descripción',last:'Último comentario',map:'Abrir en Google Maps',s1:'Paso 1: foto de cerca',s1b:'Close-up photo',s2:'Ahora una foto de lejos',s2b:'Toda el área · whole area',chk:'Revisa tus 2 fotos',chkb:'Toca × para repetir',tc:'📷 Tomar foto de cerca',tf:'📷 Ahora una de lejos',close:'De cerca',far:'De lejos',note:'¿Qué hiciste? (opcional)',extra:'＋ Agregar foto o video',send:'✓ Enviar – trabajo terminado',sending:'Enviando…',marked:'✓ Trabajo marcado como terminado',markedby:'Marcado terminado por',shm:'Shmily lo revisará y lo cerrará.',undo:'Deshacer',cancel:'Cancelar',test:'PRUEBA – nada se guarda en HelpDesk todavía',load:'Cargando trabajos…',err:'No se pudo cargar. Toca para reintentar.',out:'Cerrar sesión',viewas:'Ver como',callt:'¿A quién llamar?',st:{Open:'Abierto',Scheduled:'Programado',Pending:'Pendiente',Reopen:'Reabierto','Summer 2026':'Verano 2026',Unassigned:'Sin asignar'}},
+en:{sw:'ES',signin:'Sign in with Microsoft',signsub:'Use your B\'Above account',my:'My jobs',hi:'Hi',none:'No open jobs 🎉',open:'Open',donel:'Marked done',done:'✓ Done',dones:'Take photos and finish',call:'📞 Call',back:'← Back',photos:'Photos',nophoto:'No photo',loadph:'Loading photos…',desc:'Description',last:'Last comment',map:'Open in Google Maps',s1:'Step 1: close-up photo',s1b:'Foto de cerca',s2:'Now a photo from far',s2b:'The whole area · toda el área',chk:'Check your 2 photos',chkb:'Tap × to retake',tc:'📷 Take close-up',tf:'📷 Now take one from far',close:'Close-up',far:'From far',note:'What did you do? (optional)',extra:'＋ Add extra photo / video',send:'✓ Send – job done',sending:'Sending…',marked:'✓ Job marked done',markedby:'Marked done by',shm:'Shmily will check it and close it.',undo:'Undo',cancel:'Cancel',test:'TEST – nothing is saved to HelpDesk yet',load:'Loading jobs…',err:'Could not load. Tap to try again.',out:'Sign out',viewas:'View as',callt:'Who do you want to call?',st:{}}};
+let LG=localStorage.getItem('lg')||'es';const T=k=>TX[LG][k];
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const $=i=>document.getElementById(i);
+// ---------- sign-in (PKCE) ----------
+const b64u=b=>btoa(String.fromCharCode(...new Uint8Array(b))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+async function login(){const v=b64u(crypto.getRandomValues(new Uint8Array(32))),st=b64u(crypto.getRandomValues(new Uint8Array(16)));const ch=b64u(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(v)));sessionStorage.setItem('pkce',JSON.stringify({v,st}));
+ location.href=AUTH+'authorize?'+new URLSearchParams({client_id:CLIENT,response_type:'code',redirect_uri:REDIR,scope:SCOPE,code_challenge:ch,code_challenge_method:'S256',state:st,response_mode:'query',prompt:'select_account'})}
+let TOK=null;try{TOK=JSON.parse(localStorage.getItem('tok')||'null')}catch(_){}
+async function tokenCall(p){const r=await fetch(AUTH+'token',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(Object.assign({client_id:CLIENT,scope:SCOPE},p))});const j=await r.json();if(!j.access_token)throw new Error(j.error_description||j.error||'sign-in failed');TOK={at:j.access_token,rt:j.refresh_token,exp:Date.now()+(j.expires_in-120)*1000};localStorage.setItem('tok',JSON.stringify(TOK));return TOK}
+async function token(){if(TOK&&TOK.exp>Date.now())return TOK.at;if(TOK&&TOK.rt){try{return (await tokenCall({grant_type:'refresh_token',refresh_token:TOK.rt})).at}catch(e){}}TOK=null;localStorage.removeItem('tok');showLogin();throw new Error('signed out')}
+async function sp(path,opt){const r=await fetch(SP+path,Object.assign({headers:{Authorization:'Bearer '+await token(),Accept:'application/json;odata=nometadata'}},opt||{}));if(r.status===401){TOK.exp=0;}if(!r.ok)throw new Error('HelpDesk '+r.status);return r}
+// ---------- state ----------
+let ME=null,JOBS=[],VIEW=null,CUR=null,P={close:null,far:null},X=[],MODE='list',ERR='';
+let DONE={};try{DONE=JSON.parse(localStorage.getItem('done')||'{}')}catch(_){}
+const siteClean=s=>String(s||'').split('\n').pop().trim().replace(' --- ',' – ').replace(/\s+/g,' ')||'';
+function showLogin(m){$('app').innerHTML=`<div class="login"><img class="logo" src="icon-192.png" alt=""><div style="font:800 26px system-ui">B'Above Field</div><div style="color:#5d6760;margin:6px 0 30px">Salud y Seguridad · Health &amp; Safety</div>${m?`<div class="msg r" style="margin-bottom:16px">${esc(m)}</div>`:''}<button class="big ms" onclick="login()">${T('signin')}<small>${T('signsub')}</small></button><button class="lnk" style="background:none;border:0;margin:14px auto 0" onclick="lang()">${LG==='es'?'English':'Español'}</button></div>`}
+function lang(){LG=LG==='es'?'en':'es';localStorage.setItem('lg',LG);draw()}
+async function load(){MODE='list';ERR='';draw();try{
+ if(!ME){const u=await (await sp('/_api/web/currentuser?$select=Id,Title,Email')).json();ME=u;const k=(u.Title||'').toLowerCase();VIEW=localStorage.getItem('viewas')||u.Title}
+ const r=await (await sp(`/_api/web/lists/getbytitle('${LIST}')/items?$select=Id,TicketseqWOsuffix,Title,Status,DepartmentName,Priority,HDPCC1,HDPCC2,IssueId,Created,Attachments,TicketDescInTextformat,Comments,AssignedTo/Title&$expand=AssignedTo&$orderby=Id desc&$top=5000`)).json();
+ JOBS=(r.value||[]).filter(t=>t.DepartmentName==='HealthAndSaftey'&&!['Closed','Resolved'].includes(t.Status)).map(t=>{let cm=[];try{cm=JSON.parse(t.Comments||'[]')}catch(_){}const l=cm[cm.length-1];let lb='';if(l){lb=l.CommentBody||'';try{lb=decodeURIComponent(lb)}catch(_){}lb=lb.replace(/<[^>]+>/g,' ').replace(/&nbsp;/g,' ').replace(/\s+/g,' ').trim().slice(0,300)}
+  return {id:t.Id,sr:t.TicketseqWOsuffix||'',iid:t.IssueId,title:t.Title||'',st:t.Status,pr:t.Priority||'',site:siteClean(t.HDPCC2),room:t.HDPCC1||'',to:(t.AssignedTo&&t.AssignedTo.Title)||'',desc:t.TicketDescInTextformat||'',att:!!t.Attachments,last:l?{by:l.CommentedBy,d:l.CommentedDate,b:lb}:null,cimg:[...(t.Comments||'').matchAll(/<img[^>]+src=\\?"([^"\\]+)/g)].map(m=>m[1]).filter(u=>!u.startsWith('data:'))}});
+ draw()}catch(e){if(String(e.message)!=='signed out'){ERR=e.message;draw()}}}
+function myJobs(){return JOBS.filter(j=>j.to===VIEW).sort((a,b)=>(b.pr==='High')-(a.pr==='High')||b.id-a.id)}
+const isAdmin=()=>ME&&/vogel/i.test(ME.Title||'');
+function nameOf(v){return CREW[(v||'').toLowerCase()]||v||''}
+// ---------- screens ----------
+function draw(){if(!TOK)return showLogin();const v=nameOf(VIEW);
+ let top=`<div class="top">${MODE!=='list'?`<button class="tb" onclick="goList()">${T('back')}</button>`:''}<b>${MODE==='list'?T('my'):'B\'Above Field'}<small>${esc(v)}</small></b><button class="tb" onclick="lang()">${T('sw')}</button></div>${TEST?`<div class="test">${T('test')}</div>`:''}`;
+ if(MODE==='list')$('app').innerHTML=top+listHtml();else if(MODE==='job')$('app').innerHTML=top+jobHtml();else{$('app').innerHTML=top+camHtml();camUi()}}
+function card(j){const d=DONE[j.id];return `<div class="card ${d?'dn':j.pr==='High'?'hi':j.pr==='Medium'?'md':''}" onclick="openJob(${j.id})"><div class="sr">${esc(j.sr)}</div><div class="t">${esc(j.title)}</div><div class="s">📍 ${esc(j.site)}${j.room?' · '+esc(j.room):''}</div><div style="margin-top:8px">${d?`<span class="badge dn">✓ ${T('donel')}</span>`:`${j.pr==='High'?'<span class="badge hi">!</span>':''}<span class="badge">${esc(T('st')[j.st]||j.st)}</span>`}</div></div>`}
+function listHtml(){if(!ME&&!ERR)return `<div class="spin">${T('load')}</div>`;if(ERR)return `<div class="wrap"><div class="msg r" onclick="load()">${T('err')}<br><small>${esc(ERR)}</small></div></div>`;
+ const m=myJobs(),a=m.filter(j=>!DONE[j.id]),d=m.filter(j=>DONE[j.id]);
+ let h=`<div class="wrap">`;if(isAdmin()){const ppl=[...new Set(JOBS.map(j=>j.to).filter(Boolean))].sort();h+=`<div style="display:flex;align-items:center;gap:8px;justify-content:flex-end;margin-bottom:8px;font-size:14px;color:#5d6760">${T('viewas')} <select onchange="setView(this.value)">${ppl.map(p=>`<option ${p===VIEW?'selected':''} value="${esc(p)}">${esc(nameOf(p))} (${JOBS.filter(j=>j.to===p).length})</option>`).join('')}</select></div>`}
+ h+=a.length?`<div class="sec">${T('open')} · ${a.length}</div>`+a.map(card).join(''):`<div class="msg g" style="margin-top:20px">${T('none')}</div>`;
+ if(d.length)h+=`<div class="sec">${T('donel')} · ${d.length}</div>`+d.map(card).join('');
+ return h+`<button class="lnk" style="background:none;border:0;margin:24px auto" onclick="signOut()">${T('out')}</button></div>`}
+function setView(v){VIEW=v;localStorage.setItem('viewas',v);draw()}
+function signOut(){localStorage.removeItem('tok');localStorage.removeItem('viewas');TOK=null;ME=null;location.href=AUTH+'logout?post_logout_redirect_uri='+encodeURIComponent(REDIR)}
+const maps=s=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(s+', NY');
+function openJob(id){CUR=JOBS.find(j=>j.id===id);MODE='job';scrollTo(0,0);draw();loadPhotos(CUR)}
+function goList(){if(MODE==='cam'&&(P.close||P.far)&&!confirm(LG==='es'?'¿Salir sin enviar?':'Leave without sending?'))return;MODE=MODE==='cam'?'job':'list';draw();if(MODE==='job')loadPhotos(CUR)}
+function jobHtml(){const j=CUR,d=DONE[j.id];return `<div class="wrap"><div class="card ${j.pr==='High'?'hi':''}" style="border-left-width:6px"><div class="sr">${esc(j.sr)} · ${esc(T('st')[j.st]||j.st)}${j.pr?' · '+esc(j.pr):''}</div><div class="t" style="font-size:21px">${esc(j.title)}</div>
+ <div class="s" style="margin-top:6px">📍 <a class="addr" href="${maps(j.site)}" target="_blank" rel="noopener">${esc(j.site)}</a>${j.room?'<br>🚪 '+esc(j.room):''}</div>
+ ${j.desc?`<div class="sec" style="margin-top:14px">${T('desc')}</div><div class="desc">${esc(j.desc)}</div>`:''}
+ <div class="sec" style="margin-top:14px">${T('photos')}</div><div id="phs"><div class="nop">${T('loadph')}</div></div>
+ ${j.last?`<div class="sec" style="margin-top:14px">${T('last')}</div><div class="cm"><b>${esc(j.last.by)} · ${esc(String(j.last.d||'').slice(0,10))}</b>${esc(j.last.b)}</div>`:''}</div>
+ ${d?`<div class="msg g">${T('marked')}<div style="font-weight:600;font-size:14px;margin-top:4px">${T('markedby')} ${esc(d.by)} · ${new Date(d.at).toLocaleString()}<br>${T('shm')}</div></div><button class="lnk" style="background:none;border:0;margin:6px auto" onclick="undo()">${T('undo')}</button>`:''}
+ <div class="row2"><a class="big wht" href="${maps(j.site)}" target="_blank" rel="noopener">🧭 Maps</a><button class="big wht" onclick="callSheet()">${T('call')}</button></div></div>
+ ${d?'':`<div class="foot"><button class="big grn" onclick="startCam()">${T('done')}<small>${T('dones')}</small></button></div>`}`}
+async function loadPhotos(j){const box=()=>$('phs');const urls=[];try{if(j.att){const a=await (await sp(`/_api/web/lists/getbytitle('${LIST}')/items(${j.id})/AttachmentFiles`)).json();(a.value||[]).forEach(f=>{if(/\.(jpe?g|png|gif|webp|bmp|heic)$/i.test(f.FileName))urls.push(f.ServerRelativeUrl)})}j.cimg.forEach(u=>urls.push(u.replace(SP,'')));
+ if(!box()||CUR!==j)return;if(!urls.length){box().innerHTML=`<div class="nop">${T('nophoto')}</div>`;return}box().innerHTML='<div class="phs" id="phg"></div>';
+ for(const u of urls){let src=null;try{const r=await sp(`/_api/web/GetFileByServerRelativePath(decodedurl='${encodeURIComponent(decodeURIComponent(u).replace(/'/g,"''"))}')/$value`);src=URL.createObjectURL(await r.blob())}catch(e){}if(!$('phg')||CUR!==j)return;const im=document.createElement('img');if(src){im.src=src;im.onclick=()=>zoom(src,false)}else im.alt='?';$('phg').appendChild(im)}}catch(e){if(box())box().innerHTML=`<div class="nop">Photo couldn't be shown</div>`}}
+function zoom(u,v){const z=$('zz');z.innerHTML=v?`<video controls autoplay src="${u}"></video>`:`<img src="${u}">`;z.hidden=false}
+function callSheet(){const s=document.createElement('div');s.className='sheet';s.onclick=e=>{if(e.target===s)s.remove()};s.innerHTML=`<div><div class="h2" style="margin-bottom:6px">${T('callt')}</div>${CONTACTS.map(c=>`<div class="ct"><div><b>${esc(c.n)}</b><span>${esc(c.r[LG])}</span></div><a href="tel:+1${c.p}">📞 ${T('call').replace('📞 ','')}</a></div>`).join('')}<button class="big wht" style="margin-top:14px" onclick="this.closest('.sheet').remove()">${T('cancel')}</button></div>`;document.body.appendChild(s)}
+function undo(){delete DONE[CUR.id];localStorage.setItem('done',JSON.stringify(DONE));draw()}
+// ---------- camera flow ----------
+function startCam(){P={close:null,far:null};X=[];MODE='cam';scrollTo(0,0);draw()}
+function camHtml(){const j=CUR;return `<div class="wrap" style="padding-bottom:180px"><div class="card"><div class="sr">${esc(j.sr)}</div><div class="t">${esc(j.title)}</div><div class="s">📍 ${esc(j.site)}</div></div><div class="h2" id="h"></div>
+ <div class="boxes"><div class="ph"><div class="box" id="b1">📷</div>${T('close')}</div><div class="ph"><div class="box" id="b2">📷</div>${T('far')}</div></div><div class="ex" id="ex"></div>
+ <div id="fin" hidden><textarea id="note" placeholder="${T('note')}"></textarea><label class="lnk">${T('extra')}<input type="file" accept="image/*,video/*" multiple onchange="add(this,'extra')"></label></div></div><div class="foot" id="foot"></div>`}
+function camBtn(t,lbl){return `<label class="big dark">${lbl}<input type="file" accept="image/*" capture="environment" onchange="add(this,'${t}')"></label>`}
+function add(i,t){[...i.files].slice(0,6).forEach(f=>{const it={f,v:/^video/.test(f.type),u:URL.createObjectURL(f)};if(t==='extra')X.push(it);else P[t]=it});i.value='';camUi()}
+const nxt=()=>!P.close?'close':!P.far?'far':'';
+function box(n,t){const b=$('b'+n),it=P[t];b.className='box'+(it?' have':(nxt()===t?' now':''));b.innerHTML='';if(!it){b.textContent='📷';return}const im=document.createElement('img');im.src=it.u;im.onclick=()=>zoom(it.u);b.appendChild(im);const x=document.createElement('button');x.className='x';x.textContent='×';x.onclick=()=>{P[t]=null;camUi()};b.appendChild(x)}
+function camUi(){box(1,'close');box(2,'far');const n=nxt(),f=$('foot');$('ex').innerHTML='';X.forEach((it,i)=>{const d=document.createElement('div');d.innerHTML=(it.v?`<video muted src="${it.u}"></video>`:`<img src="${it.u}">`)+'<button class="x">×</button>';d.firstChild.onclick=()=>zoom(it.u,it.v);d.querySelector('.x').onclick=()=>{X.splice(i,1);camUi()};$('ex').appendChild(d)});
+ $('fin').hidden=!!n;
+ if(n==='close'){$('h').innerHTML=`${T('s1')}<i>${T('s1b')}</i>`;f.innerHTML=camBtn('close',T('tc'))}
+ else if(n==='far'){$('h').innerHTML=`${T('s2')}<i>${T('s2b')}</i>`;f.innerHTML=camBtn('far',T('tf'))}
+ else{$('h').innerHTML=`${T('chk')}<i>${T('chkb')}</i>`;f.innerHTML=`<button class="big grn" onclick="send()">${T('send')}</button>`}}
+async function send(){const f=$('foot');f.innerHTML=`<div class="msg y">⏳ ${T('sending')}</div>`;
+ // TEST: nothing goes to HelpDesk. Live version uploads photos to the ticket, adds the note, and marks it Resolved.
+ await new Promise(r=>setTimeout(r,900));DONE[CUR.id]={by:nameOf(VIEW),at:Date.now(),n:2+X.length};localStorage.setItem('done',JSON.stringify(DONE));MODE='job';scrollTo(0,0);draw();loadPhotos(CUR)}
+// ---------- start ----------
+(async()=>{if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
+ const q=new URLSearchParams(location.search);
+ if(q.get('code')||q.get('error')){history.replaceState(null,'',REDIR);let pk={};try{pk=JSON.parse(sessionStorage.getItem('pkce')||'{}')}catch(_){}sessionStorage.removeItem('pkce');
+  if(q.get('error'))return showLogin(q.get('error_description')||q.get('error'));
+  if(q.get('state')!==pk.st)return showLogin('Sign-in expired. Try again.');
+  try{await tokenCall({grant_type:'authorization_code',code:q.get('code'),redirect_uri:REDIR,code_verifier:pk.v})}catch(e){return showLogin(e.message)}}
+ if(!TOK)return showLogin();load()})();
+</script></body></html>
