@@ -82,7 +82,7 @@ function listHtml(){if(!ME&&!ERR)return `<div class="spin">${T('load')}</div>`;i
  return h+`<button class="lnk" style="background:none;border:0;margin:24px auto" onclick="signOut()">${T('out')}</button></div>`}
 function setView(v){VIEW=v;localStorage.setItem('viewas',v);draw()}
 function signOut(){localStorage.removeItem('tok');localStorage.removeItem('viewas');TOK=null;ME=null;location.href=AUTH+'logout?post_logout_redirect_uri='+encodeURIComponent(REDIR)}
-const maps=s=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(s+', NY');
+const maps=s=>{const a=String(s).split(' – ').pop().replace(/^[A-Za-z]{1,2}_/,'');return 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(a+', NY')};
 function openJob(id){CUR=JOBS.find(j=>j.id===id);MODE='job';scrollTo(0,0);draw();loadPhotos(CUR)}
 function goList(){if(MODE==='cam'&&(P.close||P.far)&&!confirm(LG==='es'?'¿Salir sin enviar?':'Leave without sending?'))return;MODE=MODE==='cam'?'job':'list';draw();if(MODE==='job')loadPhotos(CUR)}
 function jobHtml(){const j=CUR,d=DONE[j.id];return `<div class="wrap"><div class="card ${j.pr==='High'?'hi':''}" style="border-left-width:6px"><div class="sr">${esc(j.sr)} · ${esc(T('st')[j.st]||j.st)}${j.pr?' · '+esc(j.pr):''}</div><div class="t" style="font-size:21px">${esc(j.title)}</div>
