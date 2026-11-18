@@ -58,8 +58,8 @@ async function sp(path,opt){const r=await fetch(SP+path,Object.assign({headers:{
 let ME=null,JOBS=[],VIEW=null,CUR=null,P={close:null,far:null},X=[],MODE='list',ERR='';
 let DONE={};try{DONE=JSON.parse(localStorage.getItem('done')||'{}')}catch(_){}
 const siteClean=s=>String(s||'').split('\n').pop().trim().replace(' --- ',' – ').replace(/\s+/g,' ')||'';
-function showLogin(m){$('app').innerHTML=`<div class="login"><img class="logo" src="icon-192.png" alt=""><div style="font:800 26px system-ui">B'Above Field</div><div style="color:#5d6760;margin:6px 0 30px">Salud y Seguridad · Health &amp; Safety</div>${m?`<div class="msg r" style="margin-bottom:16px">${esc(m)}</div>`:''}<button class="big ms" onclick="login()">${T('signin')}<small>${T('signsub')}</small></button><button class="lnk" style="background:none;border:0;margin:14px auto 0" onclick="lang()">${LG==='es'?'English':'Español'}</button></div>`}
-function lang(){LG=LG==='es'?'en':'es';localStorage.setItem('lg',LG);draw()}
+function showLogin(m){$('app').innerHTML=`<div class="login"><img class="logo" src="icon-192.png" alt=""><div style="font:800 26px system-ui">B'Above Field</div><div style="color:#5d6760;margin:6px 0 30px">Salud y Seguridad · Health &amp; Safety</div>${m?`<div class="msg r" style="margin-bottom:16px">${esc(m)}</div>`:''}<button class="big ms" onclick="login()">${T('signin')}<small>${T('signsub')}</small></button><button class="lnk" style="background:none;border:0;margin:14px auto 0" onclick="setLang()">${LG==='es'?'English':'Español'}</button></div>`}
+function setLang(){LG=LG==='es'?'en':'es';localStorage.setItem('lg',LG);draw()}
 async function load(){MODE='list';ERR='';draw();try{
  if(!ME){const u=await (await sp('/_api/web/currentuser?$select=Id,Title,Email')).json();ME=u;const k=(u.Title||'').toLowerCase();VIEW=localStorage.getItem('viewas')||u.Title}
  const r=await (await sp(`/_api/web/lists/getbytitle('${LIST}')/items?$select=Id,TicketseqWOsuffix,Title,Status,DepartmentName,Priority,HDPCC1,HDPCC2,IssueId,Created,Attachments,TicketDescInTextformat,Comments,AssignedTo/Title&$expand=AssignedTo&$orderby=Id desc&$top=5000`)).json();
@@ -71,7 +71,7 @@ const isAdmin=()=>ME&&/vogel/i.test(ME.Title||'');
 function nameOf(v){return CREW[(v||'').toLowerCase()]||v||''}
 // ---------- screens ----------
 function draw(){if(!TOK)return showLogin();const v=nameOf(VIEW);
- let top=`<div class="top">${MODE!=='list'?`<button class="tb" onclick="goList()">${T('back')}</button>`:''}<b>${MODE==='list'?T('my'):'B\'Above Field'}<small>${esc(v)}</small></b><button class="tb" onclick="lang()">${T('sw')}</button></div>${TEST?`<div class="test">${T('test')}</div>`:''}`;
+ let top=`<div class="top">${MODE!=='list'?`<button class="tb" onclick="goList()">${T('back')}</button>`:''}<b>${MODE==='list'?T('my'):'B\'Above Field'}<small>${esc(v)}</small></b><button class="tb" onclick="setLang()">${T('sw')}</button></div>${TEST?`<div class="test">${T('test')}</div>`:''}`;
  if(MODE==='list')$('app').innerHTML=top+listHtml();else if(MODE==='job')$('app').innerHTML=top+jobHtml();else{$('app').innerHTML=top+camHtml();camUi()}}
 function card(j){const d=DONE[j.id];return `<div class="card ${d?'dn':j.pr==='High'?'hi':j.pr==='Medium'?'md':''}" onclick="openJob(${j.id})"><div class="sr">${esc(j.sr)}</div><div class="t">${esc(j.title)}</div><div class="s">📍 ${esc(j.site)}${j.room?' · '+esc(j.room):''}</div><div style="margin-top:8px">${d?`<span class="badge dn">✓ ${T('donel')}</span>`:`${j.pr==='High'?'<span class="badge hi">!</span>':''}<span class="badge">${esc(T('st')[j.st]||j.st)}</span>`}</div></div>`}
 function listHtml(){if(!ME&&!ERR)return `<div class="spin">${T('load')}</div>`;if(ERR)return `<div class="wrap"><div class="msg r" onclick="load()">${T('err')}<br><small>${esc(ERR)}</small></div></div>`;
