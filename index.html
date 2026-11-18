@@ -42,7 +42,7 @@ function ui(){box(1,'close');box(2,'far');var n=nxt(),f=$('foot');
  $('ex').innerHTML='';X.forEach(function(it,i){var d=document.createElement('div');d.innerHTML=(it.v?'<video muted src="'+it.u+'"></video>':'<img src="'+it.u+'">')+(it.st=='new'?'<button class="x">×</button>':'');d.firstChild.onclick=function(){zoom(it)};if(it.st=='new')d.querySelector('.x').onclick=function(){X.splice(i,1);ui()};$('ex').appendChild(d)});
  $('fin').hidden=!!n||sent||(P.close&&P.close.st!='new');
  if(P.close&&P.close.st=='up'&&!sent){$('h').innerHTML='Sending…<i>Enviando…</i>'}
- if(sent){$('h').innerHTML='✓ Sent to HelpDesk<i>Enviado a HelpDesk</i>';f.innerHTML='<div class="msg g">✓ Job done · '+(2+X.length)+' photos · TEST</div><button class="big wht" style="margin-top:10px" onclick="goBack()">← Back to my jobs<small>Volver a mis trabajos</small></button>'}
+ if(sent){$('h').innerHTML='✓ Job marked done<i>Trabajo marcado como terminado</i>';f.innerHTML='<div class="msg g">✓ Job done · '+(2+X.length)+' photos · TEST</div><button class="big wht" style="margin-top:10px" onclick="goBack()">← Back to my jobs<small>Volver a mis trabajos</small></button>'}
  else if(n=='close'){$('h').innerHTML='Step 1: close-up photo<i>Paso 1: foto de cerca</i>';f.innerHTML=camBtn('close','Take close-up','Tomar foto de cerca','dark')}
  else if(n=='far'){$('h').innerHTML='Close-up ✓<i>Ahora una foto de lejos (toda el área)</i>';f.innerHTML=camBtn('far','Now take one from far','Ahora una de lejos','dark')}
  else{$('h').innerHTML='Check your 2 photos<i>Tap × to retake · Toca × para repetir</i>';f.innerHTML='<button class="big grn" onclick="send()">✓ Send – job done<small>Enviar – trabajo terminado</small></button>'}}
